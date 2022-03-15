@@ -40,15 +40,9 @@
 </template>
 
 <script>
-import { onMounted } from "vue";
-import usePosts from "../../composables/posts";
-
 export default {
-    setup() {
-        const { posts, getPosts } = usePosts()
-        onMounted(getPosts)
-
-        return { posts }
+    props: {
+        posts: Object
     }
 }
 </script>
