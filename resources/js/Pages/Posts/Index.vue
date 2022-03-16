@@ -1,7 +1,10 @@
 <template>
     <div class="overflow-hidden overflow-x-auto p-6 bg-white border-gray-200">
         <div class="min-w-full align-middle">
-            <table class="min-w-full divide-y divide-gray-200 border">
+            <Link :href="route('posts.index')">Posts</Link>
+            <Link :href="route('pages.about')" class="ml-2">About</Link>
+
+            <table class="mt-4 min-w-full divide-y divide-gray-200 border">
                 <thead>
                 <tr>
                     <th class="px-6 py-3 bg-gray-50 text-left">
@@ -40,7 +43,12 @@
 </template>
 
 <script>
+import {Link} from "@inertiajs/inertia-vue3";
+
 export default {
+    components: {
+        Link
+    },
     props: {
         posts: Object
     }
