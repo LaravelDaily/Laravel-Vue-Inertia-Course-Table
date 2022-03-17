@@ -1311,6 +1311,10 @@ select {
     margin-left: 0px;
   }
 
+  .sm\:ml-6 {
+    margin-left: 1.5rem;
+  }
+
   .sm\:block {
     display: block;
   }
