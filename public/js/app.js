@@ -23569,6 +23569,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layouts/App */ "./resources/js/Layouts/App.vue");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -23579,6 +23581,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     posts: Object
+  },
+  setup: function setup() {
+    var destroy = function destroy(id) {
+      if (confirm('Are you sure?')) {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia["delete"](route('posts.destroy', id));
+      }
+    };
+
+    return {
+      destroy: destroy
+    };
   }
 });
 
@@ -23978,7 +23991,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "px-6 py-3 bg-gray-50 text-left"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-}, "Created at")])])], -1
+}, "Created at")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th")])], -1
 /* HOISTED */
 );
 
@@ -23997,6 +24010,10 @@ var _hoisted_7 = {
 var _hoisted_8 = {
   "class": "px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"
 };
+var _hoisted_9 = {
+  "class": "px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"
+};
+var _hoisted_10 = ["onClick"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
 
@@ -24029,7 +24046,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(post.created_at), 1
         /* TEXT */
-        )]);
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          onClick: function onClick($event) {
+            return $setup.destroy(post.id);
+          },
+          type: "button",
+          "class": "px-2 py-1 bg-red-600 text-white rounded font-bold uppercase"
+        }, " Delete ", 8
+        /* PROPS */
+        , _hoisted_10)])]);
       }), 256
       /* UNKEYED_FRAGMENT */
       ))])])];
