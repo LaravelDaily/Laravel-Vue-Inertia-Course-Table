@@ -24,6 +24,7 @@ class PostController extends Controller
     {
         Post::create($request->validated());
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')
+            ->with('message', 'Post created successfully');
     }
 }

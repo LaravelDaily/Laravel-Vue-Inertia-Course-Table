@@ -1078,6 +1078,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
 }
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
