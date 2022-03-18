@@ -25,7 +25,7 @@
             </div>
 
             <div class="py-4">
-                <button type="submit" class="inline-block px-4 py-3 bg-blue-500 text-white rounded">
+                <button type="submit" :disabled="form.processing" class="inline-block px-4 py-3 bg-blue-500 text-white rounded">
                     Save post
                 </button>
                 <Link :href="route('posts.index')" class="ml-2 inline-block px-4 py-3 bg-gray-100 rounded">
