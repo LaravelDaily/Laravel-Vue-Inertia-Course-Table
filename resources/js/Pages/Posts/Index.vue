@@ -1,6 +1,8 @@
 <template>
     <Head title="Posts list" />
     <AppLayout>
+        <Link :href="route('posts.create')" class="inline-block px-4 py-3 bg-blue-500 text-white rounded mb-4">Add new post</Link>
+
         <table class="mt-4 min-w-full divide-y divide-gray-200 border">
             <thead>
             <tr>
@@ -40,11 +42,11 @@
 
 <script>
 import AppLayout from "../../Layouts/App"
-import { Head } from "@inertiajs/inertia-vue3"
+import { Head, Link } from "@inertiajs/inertia-vue3"
 
 export default {
     components: {
-        AppLayout, Head
+        AppLayout, Head, Link
     },
     props: {
         posts: Object
