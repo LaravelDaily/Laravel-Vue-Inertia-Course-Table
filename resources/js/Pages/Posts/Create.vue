@@ -8,6 +8,9 @@
                         Title
                     </label>
                     <input v-model="form.title" type="text" id="title" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <div v-if="errors.title" class="text-red-600">
+                        {{ errors.title }}
+                    </div>
                 </div>
 
                 <div class="mt-4">
@@ -15,6 +18,9 @@
                         Content
                     </label>
                     <textarea v-model="form.content" id="content" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+                    <div v-if="errors.content" class="text-red-600">
+                        {{ errors.content }}
+                    </div>
                 </div>
             </div>
 
@@ -37,6 +43,9 @@ import { Head, Link, useForm } from "@inertiajs/inertia-vue3"
 export default {
     components: {
         AppLayout, Head, Link
+    },
+    props: {
+        errors: Object
     },
     setup() {
         const form = useForm({
