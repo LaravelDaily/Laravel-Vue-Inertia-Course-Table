@@ -38,6 +38,7 @@
                     {{ post.created_at }}
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+                    <Link :href="route('posts.edit', post.id)" class="px-2 py-1 bg-blue-600 text-white rounded font-bold uppercase mr-2">Edit</Link>
                     <button @click="destroy(post.id)" type="button" class="px-2 py-1 bg-red-600 text-white rounded font-bold uppercase">
                         Delete
                     </button>
