@@ -1,7 +1,7 @@
 <template>
     <Head title="Posts list" />
     <AppLayout>
-        <Link :href="route('posts.create')" class="inline-block px-4 py-3 bg-blue-500 text-white rounded mb-4">Add new post</Link>
+        <Link v-if="permissions.posts_manage" :href="route('posts.create')" class="inline-block px-4 py-3 bg-blue-500 text-white rounded mb-4">Add new post</Link>
 
         <table class="mt-4 min-w-full divide-y divide-gray-200 border">
             <thead>
@@ -38,8 +38,8 @@
                     {{ post.created_at }}
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-                    <Link :href="route('posts.edit', post.id)" class="px-2 py-1 bg-blue-600 text-white rounded font-bold uppercase mr-2">Edit</Link>
-                    <button @click="destroy(post.id)" type="button" class="px-2 py-1 bg-red-600 text-white rounded font-bold uppercase">
+                    <Link v-if="permissions.posts_manage" :href="route('posts.edit', post.id)" class="px-2 py-1 bg-blue-600 text-white rounded font-bold uppercase mr-2">Edit</Link>
+                    <button v-if="permissions.posts_manage" @click="destroy(post.id)" type="button" class="px-2 py-1 bg-red-600 text-white rounded font-bold uppercase">
                         Delete
                     </button>
                 </td>
@@ -59,7 +59,8 @@ export default {
         AppLayout, Head, Link
     },
     props: {
-        posts: Object
+        posts: Object,
+        permissions: Object,
     },
     setup() {
         const destroy = (id) => {

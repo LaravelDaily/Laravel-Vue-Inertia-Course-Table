@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getPermissionsAttribute()
+    {
+        return [
+            'posts_view' => in_array($this->id, [1,2]),
+            'posts_manage' => $this->id == 1,
+        ];
+    }
 }
