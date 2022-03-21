@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import AuthLayout from "../../Layouts/Auth"
+import AuthLayout from "@/Layouts/Auth"
 import { Head, useForm } from "@inertiajs/inertia-vue3"
 
 export default {

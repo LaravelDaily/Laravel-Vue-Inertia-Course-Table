@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import AppLayout from "../../Layouts/App"
+import AppLayout from "@/Layouts/App"
 import { Head, Link } from "@inertiajs/inertia-vue3"
 import {Inertia} from "@inertiajs/inertia";
 

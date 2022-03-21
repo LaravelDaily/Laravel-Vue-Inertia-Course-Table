@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import AppLayout from "../Layouts/App"
+import AppLayout from "@/Layouts/App"
 import { Head } from "@inertiajs/inertia-vue3"
 
 export default {
